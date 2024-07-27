@@ -1,0 +1,416 @@
+@import 'variables&shared';
+
+// Basic Styling-----------------------------
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+@font-face {
+  font-family: 'Patrick-Hand', cursive;
+  font-style: normal;
+  font-weight: 400;
+  src: url(PatrickHand-Regular.ttf);
+}
+// --------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  line-height: 1.5;
+  background-color: $main-bg-color;
+  color: #fff;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+// Utility Classes ----------------------------
+.swiper {
+  width: 100vw;
+}
+
+.page-container {
+  max-width: $main-container-width;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+}
+
+.btn-outline {
+  border: 1px solid;
+  background-color: transparent;
+  border-radius: 2rem;
+
+  &:hover {
+    border: 2px solid;
+  }
+}
+
+.group-theme {
+  background-color: $group-color;
+
+  &:hover {
+    background-color: darken($group-color, 7%);
+  }
+}
+
+.update {
+  background-color: $update-color !important;
+
+  &:hover {
+    background-color: darken($update-color, 7%) !important;
+  }
+}
+
+.form-input {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  text-align: center;
+  height: fit-content;
+}
+
+.items {
+  user-select: none;
+}
+
+.items,
+.buttons,
+#groups,
+.filter {
+  width: fit-content;
+  margin: 0 auto 0.25rem;
+}
+
+// @Main Page Styling -------------------------
+#main-page {
+  .page-container {
+    height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    padding: 1.5rem 0.5rem 0.5rem;
+    position: relative;
+  }
+}
+#main-section {
+  width: 100%;
+}
+
+.main-form {
+  @extend %form-shared;
+
+  .main-input-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    margin-bottom: 0.3rem;
+
+    .form-input {
+      width: 100%;
+      font-size: 1.1rem;
+      grid-column: 2 / span 7;
+    }
+
+    .fa-circle-user {
+      display: none;
+      justify-self: center;
+      align-self: center;
+      cursor: pointer;
+      font-size: 2.3rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .btn {
+    margin: 0 0.12rem 0.25rem;
+  }
+}
+
+// Submit buttons
+.buttons {
+  .add-item-btn {
+    background-color: $medium-color;
+
+    &:hover {
+      background-color: $dark-color;
+    }
+
+    &.update {
+      background-color: $update-color;
+
+      &:hover {
+        background-color: darken($update-color, 7%);
+      }
+    }
+
+    &.select-mode {
+      background-color: $selection-color;
+      &:hover {
+        background-color: darken($selection-color, 7%);
+      }
+    }
+  }
+
+  .add-group-btn {
+    &:hover {
+      background-color: darken($group-color, 7%);
+    }
+  }
+}
+// --------------------
+.line {
+  border: 0.5px solid $light-color;
+  margin: auto;
+}
+.main-line {
+  width: 30%;
+  margin-bottom: 0.25rem;
+}
+
+// Login Article
+.login {
+  background-color: $group-color;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 3rem 3rem 2rem;
+  margin-top: 7rem;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($group-color, 4%);
+    transform: scale(1.05);
+  }
+
+  .user-icon {
+    color: #fff;
+
+    .fa-circle-user {
+      font-size: 7.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h4 {
+      margin-top: 1rem;
+      font-size: large;
+      font-weight: 700;
+    }
+  }
+
+  &.form-active {
+    width: 55%;
+    height: fit-content;
+    background-color: #fff;
+    padding: 1.5rem;
+  }
+
+  .login-form {
+    background-color: $group-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    border-radius: 10px;
+    & > * {
+      width: 95%;
+    }
+    .form-control {
+      margin: 0 0.25rem 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      outline-width: 3px;
+      outline-color: $dark-color;
+    }
+    .btn {
+      background-color: $dark-color;
+    }
+  }
+}
+
+// Filter ----------------------------------
+.filter {
+  display: none;
+  width: 25%;
+
+  .filter-input {
+    @extend %filter-input-shared;
+    width: 100%;
+  }
+}
+
+//----------------------------------------
+#groups {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .btn {
+    display: inline-block;
+    margin: 0 0.12rem 0.25rem;
+
+    &:hover {
+      background-color: darken($group-color, 7%);
+    }
+  }
+}
+
+// --------------------------------
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    margin: 0 0.12rem 0.25rem;
+    border-radius: 5px;
+    background-color: $light-color;
+    color: $dark-color;
+
+    transition: all 0.2s ease-out;
+    position: relative;
+
+    &.edit-mode {
+      color: #ccc;
+    }
+
+    &.selected {
+      background-color: $delete-color;
+      color: #fff;
+    }
+
+    &.delete-mode {
+      background-color: $delete-color;
+      color: #fff;
+      .item-btn {
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      .item-btn {
+        visibility: visible;
+      }
+    }
+
+    .item-btn {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      top: -15px;
+      right: -15px;
+      color: red;
+      visibility: hidden;
+      transition: visibility 0.1s ease;
+    }
+  }
+}
+
+.selected {
+  background-color: $delete-color;
+  color: #fff;
+}
+
+// Delete Buttons-------------------
+.btn-clear {
+  display: none;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  background-color: $medium-color;
+  color: #fff;
+
+  .fa-trash-can {
+    color: inherit;
+  }
+
+  &:hover {
+    background-color: darken($selection-color, 14%);
+  }
+}
+
+// Focus Section--------------------
+#focus {
+  width: 90%;
+  height: fit-content;
+  margin-top: 4rem;
+
+  color: lighten($group-color, 20%);
+
+  .focus-form {
+    .focus-textarea {
+      @extend %filter-input-shared;
+      display: none;
+      width: 100%;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      caret-color: #fff;
+      color: inherit;
+
+      &:focus {
+        color: inherit;
+      }
+    }
+  }
+  .main-focus {
+    cursor: pointer;
+    font-weight: 400;
+    color: inherit;
+  }
+  .line {
+    display: none;
+    width: 70%;
+  }
+}
+// @Group Page Styling -------------------------
+
+@import 'group_page';
+
+// @Media Queries---------------------------
+@import 'media';
