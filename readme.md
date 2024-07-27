@@ -1,4 +1,4 @@
-# ItemStore App
+# Ideas&Todos App
 
 This is an application for storing Ideas and Todos. It is the `FullStack version of the TODO App` ( [See Repository](https://github.com/Diagne245/Todo) ).
 
