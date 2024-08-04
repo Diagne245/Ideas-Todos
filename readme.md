@@ -1,5 +1,7 @@
 # Ideas&Todos App
 
+Demo Link: &ensp;**https://itemstore.onrender.com/**
+
 This is an application for storing Ideas and Todos. It is the `FullStack version of the TODO App` ( [See Repository](https://github.com/Diagne245/Todo) ).
 
 This app includes a `Node.js/Express` API that uses `MongoDB` for a database and `Mongoose` for querying. The client-side is built with `Webpack`.
@@ -8,7 +10,6 @@ We added a `basic authentication system` requiring just an username and a passwo
 
 ![App Screenshot](/client/src/images/screenshot.png)
 
-Demo: &ensp;**https://itemstore.onrender.com/**
 
 ## Functionalities
 
