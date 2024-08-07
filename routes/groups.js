@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 
     try {
       const user = await User.findOneAndUpdate(
-        { _id: req.query.userId },
+        { _id: req.body.userId },
         {
           $push: {
             groups: {
